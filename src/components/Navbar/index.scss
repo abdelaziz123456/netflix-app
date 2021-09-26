@@ -1,0 +1,81 @@
+
+//I used @extend so that i don't have to repeat it for any div i wanna center it's elements  vertically (not in the tutorial)
+.center-y{
+    display: flex;
+    align-items: center;
+}
+.navbar{
+    color:white;
+    font-size:14px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background:linear-gradient(to top,rgba(0,0,0,.1),rgba(0,0,0,.8));
+
+    
+    z-index: 999;
+
+
+
+    .container{
+        padding:0px 50px;
+        @extend .center-y;
+        justify-content: space-between;
+        height: 70px;
+        .left{
+        @extend .center-y;
+
+        img{
+            height: 25px;
+            margin-right: 40px;
+
+        }
+        span{
+            margin-right: 20px
+        }
+    }
+
+
+
+        
+        .right{
+            @extend .center-y; 
+
+            .icon{
+                margin: 0px 15px;
+            }
+
+
+            img{
+                width: 30px;
+                height: 30px;
+                border-radius: 5px;
+                object-fit: cover;
+                cursor: pointer;
+            }
+
+            .profile{
+                cursor: pointer;
+
+                .options{
+                    display: none;
+                    
+                    
+                }
+
+                &:hover{
+                    .options{
+                        display: flex;
+                        flex-direction: column;
+                        position: absolute;
+                        background-color: var(--main-color);
+                        span{
+                            padding: 10px;
+                        }
+                        
+                    }
+                }
+            }
+        }
+    }
+}
